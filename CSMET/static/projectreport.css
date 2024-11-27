@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+   
+  
+  }form {
+    margin: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    opacity: 1;
+    box-shadow: 0 0 30px #ea1b37;
+      
+  }
+  body {
+    background-image: url("/static/image/logo1.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: fixed;
+  }
+  
+  h1 {
+    text-align: center;
+    text-decoration: underline;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  select {
+    width: 560px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 3px 3px 0px rgb(54,147,240);
+  }
+  
+  input[type="checkbox"] {
+    margin-top: 5px;
+    box-shadow: 3px 3px 0px rgb(54,147,240);
+  }
+  
+  #additionalTextBox {
+    display: none;
+    margin-top: 10px;
+  }
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px rgb(54, 147, 240);
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .btn[type="submit"]:hover,
+  .btn[type="reset"]:hover {
+    background-color: #eb4600;
+  }
+  

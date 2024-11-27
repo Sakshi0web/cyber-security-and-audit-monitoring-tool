@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Project Strategy</title>
+  <link rel="stylesheet" href="{% static 'projectprogress.css'%}">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Project Progress</h2>
+    <form method="post" action="">
+      {% csrf_token %}
+      {{form.as }}
+      <div class="form-group">
+        <label for="dropdown1">Project Number:</label>
+        <select name="number" id="dropdown1">
+          <option hidden value="">Select Option</option>
+          <option value="1"> 1</option>
+          <option value="2">2</option>
+          <option value="3"> 3</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="textbox1">Project Name:</label>
+        <input type="text" name="projectname" id="textbox1" placeholder="Enter Text">
+      </div>
+      <div class="form-group">
+        <p> <label for="textbox2">Project Iteration:</label>
+          <input type="text" name="iteration" id="textbox2" placeholder="Enter Text">
+      </div>
+
+
+      <div class="form-group">
+        <label for="datepicker"> Start Date:</label>
+        <input type="date" name="startdate" id="datepicker">
+      </div>
+
+
+
+      <div id="xyz">
+        Security test:<input type="checkbox" id="checkbox1" onclick="toggleCheckbox1()">
+      </div>
+
+      <div id="checkbox2Container" class="hidden">
+
+        Automated VA test:<input type="checkbox" id="checkbox2" onclick="toggleCheckbox2()"> <br>
+        Manual test: <input type="checkbox" id="checkbox3" onclick="toggleCheckbox3()"> <br>
+        Performance test: <input type="checkbox" id="checkbox4" onclick="toggleCheckbox4()">
+      </div>
+
+
+      <div id="dropdownContainer1" class="hidden">
+
+        <select name="automatedvatest" id="dropdown1">
+          <option hidden value="option1">select option</option>
+          <option value="Tool 1">Tool 1</option>
+          <option value="Tool 2">Tool 2</option>
+          <option value="Tool 3">Tool 3</option>
+        </select>
+      </div>
+
+      <div id="dropdownContainer2" class="hidden">
+
+        <select name="manualtest" id="dropdown2">
+          <option hidden value="option1">select option</option>
+          <option value="SQL injection">SQL injection</option>
+          <option value="XSS">XSS</option>
+          <option value="HTML">HTML</option>
+          <option value="Unrestricted file upload">Unrestricted file upload</option>
+          <option value="Broken authentication">Broken authentication</option>
+          <option value="Session management">Session management</option>
+          <option value="SSRF">SSRF</option>
+          <option value="CSRF">CSRF</option>
+          <option value="Click jection">Click jection</option>
+          <option value="OS command injection">OS command injection</option>
+          <option value="Open redirect ">Open redirect </option>
+          <option value="Host header injection">Host header injection</option>
+          <option value="Authentication bypass">Authentication bypass</option>
+          <option value="Response manipulation">Response manipulation</option>
+          <option value="Response replay attack">Response replay attack</option>
+          <option value="XXE">XXE</option>
+          <option value="Broken link injeaction">Broken link injeaction</option>
+          <option value="DDOS">DDOS</option>
+          <option value="Buffer overflow">Buffer overflow</option>
+          <option value="Memory risk">Memory risk</option>
+          <option value="Memory overflow">Memory overflow</option>
+        </select>
+      </div>
+
+
+      <div id="dropdownContainer3" class="hidden">
+
+        <select name="performancetest" id="dropdown3">
+          <option hidden value="">select option</option>
+          <option value="Stress testing">Stress testing</option>
+          <option value="Spite testing">Spite testing</option>
+          <option value="Load testing">Load testing</option>
+          <option value="Endurance testing">Endurance testing</option>
+          <option value="Volume testing">Volume testing</option>
+          <option value="Scalability testing">Scalability testing</option>
+        </select>
+      </div>
+
+
+
+
+      <button type="submit" class="btn">Submit</button>
+      <button type="reset" class="btn">Reset</button>
+    </form>
+    <p id="successMessage" class="hidden">Form successfully submitted!</p>
+  </div>
+  <div class="background-image">
+    <script src="{% static 'projectprogress.js'%}"></script>
+</body>
+
+</html>

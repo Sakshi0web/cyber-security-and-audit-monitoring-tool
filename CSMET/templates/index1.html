@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard-3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'index1.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        
+
+        <style>
+            .graphs{
+                display: grid;
+                grid-template-columns: auto auto;
+                margin:-102px;
+                margin-top: 10px;
+                padding: 10px;
+            }
+            
+           
+            .graph1 { 
+                position: relative;
+                left: 51px;
+                padding: 0px;
+                margin: 82px;
+                width: 100%;
+                height: 100%;
+                border-radius: 2%;
+            }
+
+
+            .graph3 { 
+                position: relative;
+                left: 180px;
+                padding: 0px;
+                margin: -49px;
+                width: 100%;
+                height: 100%;
+            }
+            .graph4 { 
+                position: relative;
+                left: 31px;
+                padding: 0px;
+                margin: -24px;
+            }
+
+
+            .graph2{
+                position: relative;
+                left: -69px;
+                padding: 0px;
+                margin: 82px;
+                width: 100%;
+                height: 100%;
+            }     
+
+            
+            #box{
+                width: 100%;
+                min-height: 200px;
+                margin-top:4%;
+                
+            }
+
+
+            
+</style>
+</head>
+    <body>
+        {% csrf_token %} 
+        <header>
+            <h1><a href="#" class="logo">Vulnerability Assessment</a></h1>
+        <nav class="navbar">
+            <ul>
+                
+                <li><a href="#">Project <br>Status</a></li>
+                <li><a href="#">Project <br>Management <i class="fas fa-caret-down"></i> </a> 
+                <ul>
+                    <li><a href="#"> VA Project Management <i class="fas fa-caret-right"></i></a>
+                    <ul>
+                        <li><a href="{% url 'projectindection' %}">Project Induction</a></li>
+                        <li><a href="{% url 'projectstrategy' %}">Project Strategy</a></li>
+                        <li><a href="{% url 'projectprogress' %}">Project Progress</a></li>
+                        <li><a href="{% url 'projectcompletion' %}">Project Comparision </a></li>
+                        <li><a href="{% url 'projectreport' %}">Project Report</a></li>
+                        
+                    </ul>
+                    </li>
+                   <!-- <li><a href="#">Audit <i class="fas fa-caret-right"></i></a>
+                    <ul>
+                        <li><a href="#">Audit Execution</a></li>
+                        <li><a href="#">Audit Intication</a></li>
+                        <li><a href="#">Project Followup</a></li>
+                        <li><a href="#">Audit Complition </a></li>
+                    </ul>
+                    </li>  -->
+                    <li><a href="#">Reports <i class="fas fa-caret-right"></i></a>
+                    <ul>         
+                        <li><a href="#">VA Report</a></li>
+                        <li><a href="#">Audit Report</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><a href="#">Vulnerability <br>Status</a></li>
+                <li><a href="#">Project <br>Compression</a></li>
+                </nav>
+         </header>
+        <div class="background-image">
+
+            <div id="box" class="graphs">
+                <div class="graph1">
+                    <!-- Line Graph -->
+                    <img src="data:image/png;base64,{{ line_graph }}" alt="Line Graph">
+                </div>
+                <div class="graph2">
+                    <!-- Pie Chart -->
+                    <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart">
+                </div>
+                <div class="graph3">
+                    <!-- Bar Chart -->
+                    <img src="data:image/png;base64,{{ bar_chart }}" alt="Bar Chart">
+                </div>
+                <div class="graph4">
+                    <!-- Line Graph -->
+                    <img src="data:image/png;base64,{{ line_chart }}" alt="Line Chart" class="graph4">
+                </div>
+        </div>
+    </body>
+</html>
+       

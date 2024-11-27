@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'projectcomplition.css'%}">
+</head>
+<body>
+  
+  <form method="post" action="{%url 'projectcompletion'%}">   {% csrf_token %}
+    <h1>Project Complition</h1><br>
+    <label for="dropdown">Project Number:</label>
+    <select id="dropdown" name="number">
+      <option hidden value="">Select Option</option>
+      <option value="1"> 1</option>
+      <option value="2"> 2</option>
+      <option value="3">3</option>
+    </select>
+
+    <label for="textbox1">Project Name:</label>
+    <input name="name" type="text" id="textbox1">
+
+    <label for="textbox2">Project Iteration:</label>
+    <input type="text" name="iteration" id="textbox2">
+
+    <label for="calendar">Start Date:</label>
+    <input type="date"  name="startdate" id="calendar">
+
+    <div class="buttons">
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
+
+    <script>
+      let popup = document.getElementById("popup");
+
+      function openPopup(){
+          popup.classList.add("open-popup");
+             
+          popup.addEventListener('click', function() {
+         
+          location.reload();
+      });
+          
+      }
+      function closePopup(){
+          popup.classList.remove("open-popup");
+          
+      } 
+  </script>
+  
+  </form>
+
+  <div class="background-image">
+</body>
+</html>

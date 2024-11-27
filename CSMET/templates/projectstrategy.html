@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Strategy</title>
+  <link rel="stylesheet" href="{% static 'projectstrategy.css'%}">
+</head>
+<body>
+  <div class="container">
+    <h2>Project Strategy</h2>
+     
+    <form method="post" action="{% url 'projectstrategy' %}">
+      {% csrf_token %}
+      
+      
+      <div class="form-group">
+        <label for="dropdown1">Project Number:</label>
+        <select name="number" id="dropdown1" required="">
+          <option hidden value="">Select Option</option>
+          <option value="option1"> 1</option>
+          <option value="option2"> 2</option>
+          <option value="option3"> 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="textbox1">Project Name:</label>
+        <input type="text" name="projectname" id="textbox1" placeholder="Enter Text" required="">
+      </div>
+      <div class="form-group">
+        <label for="textbox2">Project Iteration:</label>
+        <input type="text" name="projectiteration" id="textbox2" placeholder="Enter Text" required="">
+      </div>
+      <div class="form-group">
+        <label for="dropdown2">Project Lead:</label>
+        <select name="lead" id="dropdown2" required="">
+          <option hidden value="">Select Option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="datepicker">Estimated Timeline:</label>
+        <input type="date" name="estimatetimeline" id="datepicker" required="">
+      </div>
+
+
+
+      <div id="xyz">
+        Security test:<input type="checkbox" id="checkbox1" onclick="toggleCheckbox1()"> 
+        </div>
+      
+        <div id="checkbox2Container" class="hidden">
+         
+          Automated VA test:<input type="checkbox" id="checkbox2" onclick="toggleCheckbox2()">  <br>
+          Manual test:      <input type="checkbox" id="checkbox3" onclick="toggleCheckbox3()"> <br>
+          Performance test: <input type="checkbox" id="checkbox4" onclick="toggleCheckbox4()"> 
+        </div>
+      
+        <div id="dropdownContainer1" class="hidden">
+          
+          <select name="automatedvatest" id="dropdown1" required="">
+            <option hidden value="option1">Select option</option>
+            <option value="option1">Tool 1</option>
+            <option value="option2">Tool 2</option>
+            <option value="option3">Tool 3</option>
+          </select>
+        </div>
+      
+        <div id="dropdownContainer2" class="hidden">
+          
+          <select name="manualtest " id="dropdown2" required="">
+            <option hidden value="option1">Select option</option>
+            <option value="option1">SQL injection</option>
+            <option value="option2">XSS</option>     
+            <option value="option3">HTML</option>
+            <option value="option1">Unrestricted file upload</option>
+            <option value="option2">Broken authentication</option>
+            <option value="option3">Session management</option>
+            <option value="option1">SSRF</option>
+            <option value="option2">CSRF</option>
+            <option value="option3">Click jection</option>
+            <option value="option1">OS command injection</option>
+            <option value="option2">Open redirect </option>      
+            <option value="option3">Host header injection</option>
+            <option value="option2">Authentication bypass</option>
+            <option value="option3">Response manipulation</option>
+            <option value="option1">Response replay attack</option>
+            <option value="option2">XXE</option>
+            <option value="option3">Broken link injeaction</option>
+            <option value="option1">DDOS</option>
+            <option value="option2">Buffer overflow</option>
+            <option value="option3">Memory risk</option>
+            <option value="option3">Memory overflow</option>
+          </select>
+        </div>
+      
+        <div id="dropdownContainer3" class="hidden">
+          
+          <select name="performancetest" id="dropdown3" required="">
+            <option hidden value="option1">Select option</option>
+            <option value="option1">Stress testing</option>
+            <option value="option2">Spite testing</option>
+            <option value="option3">Load testing</option>
+            <option value="option1">Endurance testing</option>
+            <option value="option2">Volume testing</option>
+            <option value="option3">Scalability testing</option>
+          </select>
+        </div>
+      
+
+
+         
+      <button type="submit" class="btn">Submit</button>
+      <button type="reset" class="btn">Reset</button>
+
+    
+
+    </form>
+  </div>
+  <div class="background-image">
+  <script src="{% static 'projectstrategy.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+
+body{
+    
+  background-image: url("/static/image/logo1.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: fixed;
+}
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline #7958f0;
+  }
+  
+  #form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px 20px;
+    background-color: #fff;
+    opacity: 1;
+    box-shadow: 0 0 30px #ea1b37;
+  }
+  
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  #label-name {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid ;
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px rgb(54, 147, 240);
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+    box-shadow: 3px 3px 0px rgb(54, 147, 240);
+  }    
+  
+  button[type="submit"],
+  button[type="reset"] {
+        display: block;
+        width: 100%;  
+        padding: 10px;
+        background-color: #7958f0;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 5px;
+        font-weight: bold;
+      
+  }
+  
+  button[type="submit"]:hover,
+  button[type="reset"]:hover {
+    background-color: red;
+  }
+  
+  input[type="file"] {
+    margin-top: 5px;
+  }
+
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px rgb(54, 147, 240);
+  }
+  
+  .calendar {
+    margin-left: 10px;
+  }
+
+  input[type="radio"]{
+    width: 16px;
+    height: 16px;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0px 2px 2px rgb(54,147,240);
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

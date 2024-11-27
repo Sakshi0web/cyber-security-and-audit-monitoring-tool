@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audit Scheduling</title>
+  <link rel="stylesheet" href="{% static 'auditscheduling.css' %}">
+</head>
+<body>
+  
+  
+  
+  <form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1>Audit Scheduling</h1>
+    <label for="year">Audit Scheduling Year :</label>
+    <input type="number" name="auditschedulingyear" id="year" >
+    
+    <br><br>
+    
+    <label for="checkbox">Bulk Upload :</label>
+    <input type="checkbox" id="checkbox" name="checkbox" onclick="toggleFields()">
+    
+    <br><br>
+    
+    <div id="additionalFields" class="form-control">
+      <label for="file">File Upload:</label>
+      <input type="file" name="file_upload" accept=".pdf" class="form-control">
+      
+      <br><br>
+      
+      <label for="dropdown">Unit :</label>
+      <select name="unit" id="dropdown" >
+        <option hidden value="Select Option"> Select Option</option>
+        <option value="1"> 1</option>
+        <option value="2">2</option>
+        <option value="3"> 3</option>
+      </select>
+      
+      <br><br>
+      
+      <label for="textbox">Station :</label>
+      <input type="text" name="station" id="textbox" >
+      
+      <br><br>
+      
+      <label for="calendar1">Audit from :</label>
+      <input type="date" name="auditfrom" id="calendar1" >
+      
+      <br><br>
+      
+      <label for="calendar2">Audit to :</label>
+      <input type="date" id="calendar2" name="auditto">
+    </div>
+    
+    <br><br>
+    
+    <button type="save" class="btn">Save</button>
+    <button type="clear" class="btn">Clear</button>
+  </form>
+  
+  <script src="{% static 'auditscheduling.js' %}"></script>
+  <div class="background-image">
+</body>
+</html>

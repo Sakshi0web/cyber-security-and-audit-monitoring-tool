@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard-3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'index2.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <style>
+            .graphs{
+                display: grid;
+                grid-template-columns: auto auto;
+                margin:-102px;
+                margin-top: 10px;
+                padding: 10px;
+            }
+            
+            .graph1{
+                position: relative;
+                left: 51px;
+                padding: 0px;
+                margin: 82px;
+                width: 100%;
+                height: 100%;
+            }     
+
+            .graph2 { 
+                position: relative;
+                left: -79px;
+                padding: 0px;
+                margin: 83px;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .graph3 { 
+                position: relative;
+                left: 180px;
+                padding: 0px;
+                margin: -49px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .graph4 { 
+                position: relative;
+                left: 52px;
+                padding: 0px;
+                margin: -48px;
+                width: 100%;
+                height: 100%;
+                
+            }
+
+            .graph5 { 
+                position: relative;
+                left: 50px;
+                padding: 0px;
+                margin: 81px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .graph6 { 
+                position: relative;
+                left: -79px;
+                padding: 0px;
+                margin: 83px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .graph7 { 
+                position: relative;
+                left: 182px;
+                padding: 0px;
+                margin: -52px;
+                width: 100%;
+                height: 100%;
+            }
+
+            
+            #box{
+                width: 100%;
+                min-height: 200px;
+                margin-top:4%;
+                
+            }
+
+            table {
+                width: 93%;
+                border-collapse: collapse;
+                position: relative;
+                padding: 0px;
+                margin: 175px;
+                left: -139px;
+                
+               
+              }
+              th, td {
+                border: 1px solid black;
+                padding: 6px;
+                
+
+
+              }
+              th {
+                background-color: #d62954;
+                padding: 8px;
+              }
+              tr:nth-child(even) {
+                background-color: #efa0b4;
+              }
+              tr:nth-child(odd) {
+                background-color: #ee91a8;
+              }
+             
+
+
+            
+</style>
+
+
+</head>
+    <body>
+        {% csrf_token %} 
+        <header>
+            <h1><a href="#" class="logo">Cyber Security Audit</a></h1>
+        <nav class="navbar">
+            <ul>
+                
+                <li><a href="#">Information</a></li>
+                <li><a href="#">Audit <br> Management <i class="fas fa-caret-down"></i> </a> 
+                    <ul>
+                    <li><a href="{% url 'auditinitiation' %}">Audit Initiation</a></li>
+                    <li><a href="{% url 'auditcomplition' %}">Audit Complition</a></li>
+                    <li><a href="{% url 'auditexecution' %}">Audit Execusion</a></li>
+                    <li><a href="{% url 'auditscheduling' %}">Audit Scheduling </a></li>
+                    
+                    </ul>
+                    
+                </li>
+               
+                <li><a href="#"> Schedule </a></li>
+              
+                <li><a href="#">Alerts</a></li>
+                <li><a href="#">Observtion <br> Status</a></li>
+                </nav>
+         </header>
+        <div class="background-image">
+
+        <div id="box" class="graphs">
+            <div class="graph1">
+                <!-- Pie Chart -->
+                <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart">
+            </div>
+            <div class="graph2">
+                <!-- Bar Chart -->
+                <img src="data:image/png;base64,{{ bar_chart }}" alt="Bar Chart">
+            </div>
+            <div class="graph3">
+                <!-- Bar Chart -->
+                <img src="data:image/png;base64,{{ bar_charts }}" alt="Bar Chart">
+            </div>
+            <div class="graph4">
+                <!-- Line Graph -->
+                <img src="data:image/png;base64,{{ line_chart }}" alt="Line Graph">
+            </div>
+            <div class="graph5">
+                <!-- Line Graph -->
+                <img src="data:image/png;base64,{{ line_charts }}" alt="Line Graph">
+            </div>
+            <div class="graph6">
+                <!-- Bar Chart -->
+                <img src="data:image/png;base64,{{ bar_chartss }}" alt="Bar Chart">
+            </div>
+            <div class="graph7">
+                <!-- Bar Chart -->
+                <img src="data:image/png;base64,{{ bar_chartsss }}" alt="Bar Chart">
+            </div>
+
+        </div>   
+         <!---table-->
+         <table>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Unit</th>
+                <th>Station</th>
+                <th>Officer 1</th>
+                <th>Officer 2</th>
+                <th>Audit From</th>
+                <th>Audit To</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project 1</td>
+                <td>Unit 1</td>
+                <td>Station 1</td>
+                <td>Officer 1</td>
+                <td>Officer 2</td>
+                <td>Audit From 1</td>
+                <td>Audit To 1</td>
+              </tr>
+              <tr>
+                <td>Project 2</td>
+                <td>Unit 2</td>
+                <td>Station 2</td>
+                <td>Officer 3</td>
+                <td>Officer 4</td>
+                <td>Audit From 2</td>
+                <td>Audit To 2</td>
+              </tr>
+              <tr>
+                <td>Project 2</td>
+                <td>Unit 2</td>
+                <td>Station 2</td>
+                <td>Officer 3</td>
+                <td>Officer 4</td>
+                <td>Audit From 2</td>
+                <td>Audit To 2</td>
+              </tr>
+              <tr>
+                <td>Project 2</td>
+                <td>Unit 2</td>
+                <td>Station 2</td>
+                <td>Officer 3</td>
+                <td>Officer 4</td>
+                <td>Audit From 2</td>
+                <td>Audit To 2</td>
+              </tr>
+              <tr>
+                <td>Project 2</td>
+                <td>Unit 2</td>
+                <td>Station 2</td>
+                <td>Officer 3</td>
+                <td>Officer 4</td>
+                <td>Audit From 2</td>
+                <td>Audit To 2</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+          </table>
+          
+     
+    </body>
+</html>
+       

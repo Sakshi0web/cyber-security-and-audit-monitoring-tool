@@ -1,0 +1,89 @@
+*{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+   
+  }
+  
+  body{
+    
+    background-image: url("/static/image/logo1.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: fixed;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px 20px;
+    background-color: #fff;
+    opacity: 1;
+    box-shadow: 0 0 30px #ea1b37;
+      
+     
+    }
+    h1 {
+      text-align: center;
+      text-decoration: underline #7958f0;
+    }
+    
+    label, input, select {
+      display: block;
+      font-size: medium;
+      font-weight: bolder;
+      margin-bottom: 10px;
+      
+      
+    }
+    
+   select  {
+    border-radius: 5px;
+      border: 1px solid;
+      width: 100%;
+      padding: 10px;
+      box-shadow: 3px 3px 0px rgb(54, 147, 240);
+    }
+    
+      .buttons {
+      margin-top: 20px;
+    }
+    
+    input[type="submit"], input[type="reset"] {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          background-color: #7958f0;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 10px;
+        
+  
+    }
+    
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: rgb(232, 6, 6);
+    }
+    
+  
+    input[type="text"],
+     text {
+      border-radius: 5px;
+      border: 1px solid ;
+      width: 100%;
+      padding: 10px;
+      box-shadow: 3px 3px 0px rgb(54, 147, 240);
+    }
+  
+  
+      input[type="date"],
+     date {
+      border-radius: 5px;
+      border: 1px solid ;
+      width: 100%;
+      padding: 10px;
+      box-shadow: 3px 3px 0px rgb(54, 147, 240);
+    }
+    

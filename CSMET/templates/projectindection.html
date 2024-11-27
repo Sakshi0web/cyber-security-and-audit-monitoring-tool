@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>project induction</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'projectindection.css'%}">
+        
+        
+    
+    </head>
+    <body>
+
+        <form id="form" method="POST" action="{% url 'projectindection' %}"  enctype="multipart/form-data">  {% csrf_token %}
+            <h1>Project Indection</h1>
+            <div class="from-control">
+                <label for="name" id="label-name">Project Name:
+                </label>
+                <input type="text"name="projectname" id="name" placeholder="Enter your project name" >
+            </div><br/>
+             <div class="from-control">
+                <label for="name"   id="label-name">Project Owner:
+                </label>
+
+                <input type="text" name="projectowner    " id="name" placeholder="Enter your project owner">
+            </div><br/>
+
+            <div class="row">
+                <label for="textbox1">Project Number:</label>
+                <input type="text" name="projectnumber" placeholder="Enter here">
+                <input type="date" name="date_projectnumber" class="calendar">
+              </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name"> Fresh Project: 
+                </label>
+                <input type="checkbox">
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name"  id="label-name"> Types of Project: 
+                </label>
+
+                <select name="typeofproject">
+                    <option hidden value="select option">Select option</option>
+                    <option value="Web application">Web application</option>
+                    <option value="Android Application">Android Application</option>
+                    <option value="iOS Application">iOS Application</option>
+                    <option value="Software Application">Software Application</option>
+                </select>
+            
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name"> Application version: 
+                </label>
+
+                <select  name="applicationversion">
+                    <option hidden value="select option">Select option:</option>
+                    <option value="1.1">1.1</option>
+                    <option value="1.2">1.2</option>
+                    
+                </select>
+            
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name">Linked to previous project:
+                </label>
+
+                <input type="radio" name="radio_linkedtopreviousproject">Yes
+                <input type="radio" name="radio_linkedtopreviousproject">No
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name"> Prerequest:
+                </label>
+            </div>
+
+            <div class="from-control">
+                <label for="name" id="label-name">Avability va report from vender:
+                </label>
+
+                <input type="radio" name="radio_avabilityvarepotfromvender">Yes
+                <input type="radio" name="radio_avabilityvarepotfromvender">No
+
+                <input type="file" name="file_avabilityvarepotfromvender" accept=".pdf" class="from-control">
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name">Avability safe to host certificate:
+                </label>
+
+                
+                <input type="file" name="file_avabilitysafetohostcertificate" accept=".pdf">
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name">Avability design or architecture documention:
+                </label>
+
+                <input type="radio" name="radio_avabilitydesignorarchitecturedocumention">Yes
+                <input type="radio" name="radio_avabilitydesignorarchitecturedocumention">No
+
+                <input type="file" name="file_avabilitydesignorarchitecturedocumention" accept=".pdf">
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name">Staging environment Avability:
+                </label>
+
+                <input type="radio" name="radio_stagingenvironmentavability">Yes
+                <input type="radio" name="radio_stagingenvironmentavability">No
+
+            
+            </div><br/>
+
+            <div class="from-control">
+                <label for="name" id="label-name">Ip white listing:
+                </label>
+
+                <input type="radio" name="radio_ipwhitelisting">Yes
+                <input type="radio" name="radio_ipwhitelisting">No
+
+            
+            </div><br/>
+            
+            <button type="submit" value="Submit">Submit</button><br/>
+            <button type="reset" value="Reset">Reset</button>
+
+            <script>
+                let popup = document.getElementById("popup");
+    
+                function openPopup(){
+                    popup.classList.add("open-popup");
+                       
+                    popup.addEventListener('click', function() {
+                   
+                    location.reload();
+                });
+                    
+                }
+                function closePopup(){
+                    popup.classList.remove("open-popup");
+                    
+                } 
+            </script>
+            
+        </form>
+      
+        
+                
+        <div class="background-image">
+        <script src="" ></script>
+    </body>
+</html>

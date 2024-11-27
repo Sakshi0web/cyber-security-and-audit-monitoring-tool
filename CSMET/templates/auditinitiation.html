@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'auditinitiation.css' %}">
+    </head>
+    <body>
+        
+        <div> {% csrf_token %}
+            <h1><u>Audit Intiation</u></h1>
+            <div id="multi-step-form-container">
+                <!-- Form Steps / Progress Bar -->
+                <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                    <!-- Step 1 -->
+                    <li class="form-stepper-active text-center form-stepper-list" step="1">
+                        <a class="mx-2">
+                            <span class="form-stepper-circle">
+                                <span>1</span>
+                            </span>
+                            <div class="label"></div>
+                        </a>
+                    </li>
+                    <!-- Step 2 -->
+                    <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                        <a class="mx-2">
+                            <span class="form-stepper-circle text-muted">
+                                <span>2</span>
+                            </span>
+                            <div class="label text-muted"></div>
+                        </a>
+                    </li>
+                    <!-- Step 3 -->
+                    <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                        <a class="mx-2">
+                            <span class="form-stepper-circle text-muted">
+                                <span>3</span>
+                            </span>
+                            <div class="label text-muted"></div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Step Wise Form Content -->
+    <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST" action="{% url 'auditinitiation' %}">
+                    {% csrf_token %}
+                    <!-- Step 1 Content -->
+                    <section id="step-1" class="form-step">
+                        <h2 class="font-normal"></h2>
+                        <!-- Step 1 input fields -->
+                       
+                            <div class="form-container">
+                                
+                                
+                                    <label for="dropdown1"><b>Project Number :</b></label>
+                                    <select name="projectnumber" id="dropdown1" >
+                                      <option value="hidden">select option : </option>
+                                        <option value="1"> 1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3"> 3</option>
+                                        <option value="4"> 4</option>
+                                        <option value="5"> 5</option>
+                                        <option value="6"> 6</option>
+                                    </select>
+                                    
+                                    <br><br>
+
+                                    <label for="dropdown2"><b>Unit :</b></label>
+                                    <select  name="unit" id="dropdown2" >
+                                      <option value="hidden">select option : </option>
+                                        <option value="United State Army Forces Command - (FORSCOM)">United State Army Forces Command - (FORSCOM) </option>
+                                        <option value="United State Army Training and Doctrine Command - (TRADOC)">United State Army Training and Doctrine Command - (TRADOC)</option>
+                                        <option value="United State Army Corps of Engineers - (USACE)">United State Army Corps of Engineers - (USACE)</option>
+                                        <option value="United State Army Cyber Command - (ARCYBER)">United State Army Cyber Command - (ARCYBER)</option>
+                                        <option value="United State Army Financial Management - (FMCOM)">United State Army Financial Management - (FMCOM)</option>
+                                    </select>
+        
+                                    <br><br>
+                                    
+                                    <label for="textbox"><b>Station :</b></label>
+                                    <input type="text" name="station " id="textbox"  placeholder="Enter text here">
+                        
+                                    <div class="mt-3">
+                                        <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                                    </div>
+
+                                
+                            </div>
+                    
+                        
+                    </section>
+                    <!-- Step 2 Content, default hidden on page load. -->
+                    <section id="step-2" class="form-step d-none">
+                        
+                        <!-- Step 2 input fields -->
+                        <div class="form-container">
+                            
+                           
+                              <div class="form-group">
+                                <label>Pre audit brief recevied</label>
+                                <div class="radio-group">
+                                  <input type="radio" name="option" value="yes" onclick="showDropdown()"> Yes
+                                </div>
+                                <div class="radio-group">
+                                  <input type="radio" name="option" value="no" onclick="hideDropdown()"> No
+                                </div>
+                              </div>
+                              <br><br>
+                              <div class="form-group active" >
+                                <label>Details of IT assests :</label>
+                                <select name="detailsofitassests" id="dropdown">
+                                  <option value="hidden">select option:</option>  
+                                  <option value="DCyA Case No">DCyA Case No</option>
+                                  <option value="DCyA Fwd Letter">DCyA Fwd Letter</option>
+                                  <option value="DCyA Fwd Date">DCyA Fwd Date</option>
+                                  <option value="Mster SI">Mster SI</option>
+                                  <option value="DCyA File Ref">DCyA File Ref</option>
+                                  <option value="Reporting Agency">Reporting Agency</option>
+                                  <option value="Rep Date">Rep Date</option>
+                                  <option value="App Ref SI">App Ref SI</option>
+                                  <option value="Org">Org</option>
+                                  <option value="User Name Comp Name">User Name Comp Name</option>
+                                  <option value="Incident Date">Incident Date</option>
+                                  <option value="Website Address">Website Address</option>
+                                  <option value="Country">Country</option>
+                                  <option value="Threat Actor">Threat Actor</option>
+                                  <option value="Malware">Malware</option>
+                                  <option value="C&C IP">C&C IP</option>
+                                  <option value="C2 Server Port">C2 Server Port</option>
+                                  <option value="Malicious Domain">Malicious Domain</option>
+                                  <option value="Victim IP">Victim IP</option>
+                                  <option value="Remarks">Remarks</option>
+                                  <option value="Compromise">Compromise</option>
+                                  <option value="Closed date">Closed date</option>
+                                  <option value="Status">Status</option>
+                                  
+                                </select>
+                              </div>
+                              <br><br>
+                              <div class="mt-3">
+                                <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                                <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                            </div>
+                              
+                            
+                          </div>         
+                        
+                        
+                    </section>
+                    <!-- Step 3 Content, default hidden on page load. -->
+                    <section id="step-3" class="form-step d-none">
+                        
+                        <!-- Step 3 input fields -->
+                        <div class="form-container">
+                            
+                              <label for="dropdown" class="form-label"><b>Team Details:</b></label>
+                              <select  name="teamdetails" id="dropdown" class="form-select">
+                                <option value="hidden">select option:</option>  
+                                <option value="DCyA Case No">DCyA Case No</option>
+                                <option value="DCyA Fwd Letter">DCyA Fwd Letter</option>
+                                <option value="DCyA Fwd Date">DCyA Fwd Date</option>
+                                <option value="Mster SI">Mster SI</option>
+                                <option value="DCyA File Ref">DCyA File Ref</option>
+                                <option value="Reporting Agency">Reporting Agency</option>
+                                <option value="Rep Date">Rep Date</option>
+                                <option value="App Ref SI">App Ref SI</option>
+                                <option value="Org">Org</option>
+                                <option value="User Name Comp Name">User Name Comp Name</option>
+                                <option value="Incident Date">Incident Date</option>
+                                <option value="Email Address">Email Address</option>
+                                <option value="Country">Country</option>
+                                <option value="Threat Actor">Threat Actor</option>
+                                <option value="Malware">Malware</option>
+                                <option value="C&C IP">C&C IP</option>
+                                <option value="C2 Server Port">C2 Server Port</option>
+                                <option value="Malicious Domain">Malicious Domain</option>
+                                <option value="Victim IP">Victim IP</option>
+                                <option value="Remarks">Remarks</option>
+                                <option value="Compromise">Compromise</option>
+                                <option value="Closed date">Closed date</option>
+                                <option value="Status">Status</option>
+                              </select>
+                              <br><br>
+                              <label for="calendar" class="form-label"><b>Intiation Date:</b></label>
+                              <input type="date"  name="inititationdate" id="calendar" class="form-calendar">
+                              <br><br>
+                              <div class="mt-3">
+                                <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button> 
+                               <button class="button submit-btn" type="submit">  Save</button>
+                            </div>
+                           
+                          </div>
+                        
+                    </section>
+                
+            </div>
+        </div>
+        <script src="{% static 'auditinitiation.js' %}" ></script>
+    </form>
+    <div class = "background-image">
+    </body>
+</html>

@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSEMT</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard.css'%}">
+    </head>
+    <body>
+        {% csrf_token %} 
+        
+        
+        <!--- Header 1 -->
+          <div class="header1">
+            <div class="container">
+              <img src="/static/image/logo.png" class="hello">            
+            </div>
+               <div class="header1-right">
+                
+                
+                   <a href="{% url 'login' %}">Login</a>
+                   <!--<a href="#logout">Logout</a> -->
+                   <a href="{% url 'logout' %}">Logout</a>
+                </div>
+          </div>
+        
+          <br>
+        <!-- Header 2 -->
+        <div class="background-gif">
+          <img src="{% static 'image/pks0.gif' %}" alt="Gif GIF">
+        </div>
+      
+ 
+  <nav class="navbar">
+    <ul>
+      <li><a href="{% url 'va' %}">VulnerabilityAssessment  <i class="fas fa-caret-down"></i></a>
+        <ul> 
+          <li><a href="#">  Project Management <i class="fas fa-caret-down"></i></a>
+            <ul>
+            <li><a href="#"> VA Project Management <i class="fas fa-caret-right"></i></a>
+              <ul>
+                  <li><a href="{% url 'projectindection' %}">Project Induction</a></li>
+                  <li><a href="{% url 'projectstrategy' %}">Project Strategy</a></li>
+                  <li><a href="{% url 'projectprogress' %}">Project Progress</a></li>
+                  <li><a href="{% url 'projectcompletion' %}">Project Complition </a></li>
+                  <li><a href="#">Project Report</a></li>
+                  
+              </ul>
+              </li>
+              <li><a href="#">Reports <i class="fas fa-caret-right"></i></a>
+                <ul>
+                    <li><a href="{% url 'vareport' %}">VA Report</a></li>
+                    <li><a href="{% url 'auditreport' %}">Audit Report</a></li>
+                </ul>
+              </li>
+            </ul>
+            
+          
+          <li><a href="">Project Status</a></li>
+          <li><a href="">Vulnerability Status</a></li>
+          <li><a href="">Project Compression</a></li>
+         </ul>
+        </li>
+
+       
+
+
+      <li><a href="{% url 'cs' %}">CyberSecurityAudit <i class="fas fa-caret-down"></i></a>
+        <ul>
+         <li><a href="">Audit Management</a> <i class="fas fa-caret-right"></i></a>
+           <ul>
+             <li><a href="{% url 'auditcomplition' %}">Audit Complition</a></li>
+             <li><a href="{% url 'auditscheduling' %}">Audit Scheduling</a></li>
+             <li><a href="{% url 'auditinitiation' %}">Audit Initiation</a></li>
+             <li><a href="{% url 'auditexecution' %}">Audit Execution</a></li>
+             
+             
+         </ul>
+         </li>
+         
+         <li><a href="">Information</a></li>
+         <li><a href="">Schedule</a></li>
+         <li><a href="">Alerts</a></li>
+         <li><a href="">Observation Status</a></li>
+       
+       </li>
+        </ul>
+      </nav>
+     
+
+
+
+         <div class="card">
+          <img src="{% static 'image/card1.jpeg' %}" class="card-img" alt="">
+              <div class="card-body">
+                 
+                      <p class="card-info">In the ever-evolving landscape of cyber threats, achieving cyber security is essential, but it's not
+                        enough. Cyber resilience is the key to staying strong and adaptable in the face of potential cyber incidents
+                        and attacks. At our cyber security website, we emphasize the importance of cyber resilience as a
+                        comprehensive approach to safeguarding your digital assets. </p>
+
+              </div>
+      </div>
+
+      <div class="card1">
+          <img src="{% static 'image/card2.jpeg' %}" class="card-img1" alt="">
+              <div class="card-body1">
+                 
+                      <p class="card-info1"> Privacy is a fundamental aspect of cyber security that focuses on protecting sensitive information from
+                        unauthorized access or disclosure. In the digital age, where vast amounts of personal data are collected
+                        and processed daily, safeguarding privacy has become more critical than ever. By prioritizing privacy in
+                        cyber security practices, individuals, businesses, and organizations can foster trust, maintain compliance
+                        with regulations, and safeguard against potential data breaches or misuse.</p>
+              </div>
+      </div>
+
+
+      <div class="card2">
+        <img src="{% static 'image/card3.jpeg' %}" class="card-img2" alt="">
+                  <div class="card-body2">
+               
+                          <p class="card-info2">At our cybersecurity website, we prioritize your privacy and strive to ensure the confidentiality,
+                            integrity, and availability of your information. Embrace information security as a fundamental aspect of
+                            your digital presence and join us in creating a safer and more secure online environment. Together, let's
+                            defend against cyber risks and build a resilient digital future. </p>
+  
+                  </div>
+          </div>
+
+            
+        
+      <div class="background-image"></div> 
+
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+           
+  
+        
+      
+     
+        <div class="background-image"></div> 
+      </body>
+  </html>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!---header3   modern navigation bar
+        <div class="header3">
+                  
+                    <input type="checkbox" id="checkbox">
+    <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+    </label>
+                    
+                    <div class="slide">
+                        <h4>MENU</h4>
+                        <ul>
+                            <li><h3><a href="#"><i class="fas fa-home"><ion-icon name="home"></ion-icon></i>Home</a></h3></li>
+                            <li><h3><a href="#"><i class="fas fa-setting"><ion-icon name="settings"></ion-icon></i>Setting</a></h3></li>
+                            <li><h3><a href="#"><i class="fas fa-help"><ion-icon name="help-circle"></ion-icon></i>Help</a></h3></li>   
+                        </ul>    
+                        <ul>
+                            <li><h3><a href="#"><i class="fas fa-logout"><ion-icon name="log-out"></ion-icon></i>Logout</a></h3></li>
+                        </ul>   
+                      </div>   
+                    </div>
+                    </div>
+                    
+                    
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            </div>    
+              -->
+       
+
+       
+
+    
+
+  

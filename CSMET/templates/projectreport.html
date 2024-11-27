@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <link rel="stylesheet" href="{% static 'projectreport.css'%}">
+</head>
+<body>
+  <form method="post" action="">
+    {% csrf_token %}
+    <h1>Project Report</h1>
+    <br>
+    <label for="dropdown">Project Number:</label>
+    <select id="dropdown" name="pronumber">
+        <option hidden value="selectoption"> Select Option </option>
+      <option value="1">1</option>
+      <option value="2"> 2</option>
+      <option value="3">3</option>
+    </select>
+    <br><br>
+    
+    <label for="textbox1">Project Name:</label>
+    <input type="text" name="proname" id="textbox1" >
+    <br><br>
+    
+    <label for="textbox2">Project Iteration:</label>
+    <input type="text" name="proiteration" id="textbox2" >
+    <br><br>
+    
+    <label for="calendar1">Start Date:</label>
+    <input type="date" name="startdate" id="calendar1" >
+    <br><br>
+    
+    <label for="calendar2">End Date:</label>
+    <input type="date" name="enddate" id="calendar2"  >
+    <br><br>
+    
+    <label for="textbox">VA Details:</label>
+    <input type="text" name="provadetils" id="textbox" >
+    <br><br>
+    
+    <label for="checkbox"></label> <b>SQL :</b>
+    <input type="checkbox" id="checkbox" name="checkbox" onclick="toggleTextBox()">
+    <br><br>
+    
+    <div id="additionalTextBox" style="display: none;">
+      <label for="additional">POC :</label>
+      <input type="text" id="additional" name="additional">
+      <br><br>
+    </div>
+    
+    <label for="dropdown">SEVERIT :</label>
+    <select name="proseverit" id="dropdown" >
+      <option hidden value="selectoption"> Select Option </option>
+      <option value="Critical">Critical</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <br><br>
+    
+    <label for="textbox2">VA Parameters :</label>
+    <input type="text" name="provaparameters" id="textbox2" >
+    <br><br>
+    <button type="submit" class="btn">Submit</button>
+    <button type="reset" class="btn">Reset</button>
+   
+  </form>
+  <script src ="projectreport.js"></script>
+  <div class="background-image">
+</body>
+</html>
